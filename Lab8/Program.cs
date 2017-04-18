@@ -24,13 +24,34 @@ namespace Lab8
 
                 for (int i = 0; i < atBats; i++)
                 {
-                    Console.Write("Enter the result for the {0}-th at bat:", i+1);
+                    Console.Write("Enter the result for the {0}-th at bat:", i + 1);
                     BattingResults[i] = GetIntegerInRange(0, 4);
                 }
+
+               
+
 
             } while (Continue());
 
             Console.WriteLine("Goodbye!");
+        }
+
+        public static double BattingAverage(int[] input)
+        {
+            int x = 0;
+            int y = input.Length;
+
+            for (int i = 0; i < input.Length; i++)
+            {
+
+                if (input[i] != 0)
+                {
+                    x = x + 1;
+                }
+            }
+
+            double battingAverage = x / y;
+            return battingAverage;
         }
 
         public static bool Continue()
@@ -45,6 +66,7 @@ namespace Lab8
             }
             else if (input.ToLower() == "y")
             {
+                Console.Clear();
                 return true;
             }
             else
