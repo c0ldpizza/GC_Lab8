@@ -25,7 +25,7 @@ namespace Lab8
 
                 for (int r = 0; r < batters; r++)
                 {
-                    Console.WriteLine("How many at bats does batter No. {0} have?", r+1);
+                    Console.WriteLine("How many at bats does batter No. {0} have?", r + 1);
                     BatterData[r] = new int[int.Parse(Console.ReadLine())];
 
                     Console.WriteLine("Enter batting data for batter {0}:", r + 1);
@@ -36,23 +36,19 @@ namespace Lab8
                     }
 
                 }
-                //int[] BattingResults = new int[atBats];
 
-                Console.WriteLine("0=out, 1=single, 2=double, 3=triple, 4=home run");
+                for (int r = 0; r < BatterData[r].Length; r++)
+                {
+                    decimal x = BattingAverage(BatterData[r]);
+                    decimal y = SluggingPercentage(BatterData[r]);
 
-                //for (int i = 0; i < atBats; i++)
-                //{
-                //    Console.Write("Enter the result for the {0}-th at bat:", i + 1);
-                //    BattingResults[i] = GetIntegerInRange(0, 4);
-                //}
+                    decimal BA = Math.Round(x, 3);
+                    decimal SP = Math.Round(y, 3);
 
-                //output results to user
-                //decimal BA = Math.Round(BattingAverage(BattingResults), 3);
-                //Console.WriteLine("Batting average: {0}", BA.ToString("#0.000")); 
+                    //output results to user
+                    Console.WriteLine("Batter {0} Batting average: {1}\t Slugging percentage: {2}", r+1 , BA.ToString("#0.000"), SP.ToString("#0.000"));
+                }
 
-                //decimal SP = Math.Round(SluggingPercentage(BattingResults), 3);
-                //Console.WriteLine("Slugging percentage: {0}", SP.ToString("#0.000"));
-                
             } while (Continue());
 
             Console.WriteLine("Goodbye!");
