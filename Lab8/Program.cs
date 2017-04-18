@@ -30,7 +30,8 @@ namespace Lab8
 
                 double BA = BattingAverage(BattingResults);
                 Console.WriteLine("Batting average: {0}", BA);
-
+                double SP = SluggingPercentage(BattingResults);
+                Console.WriteLine("Slugging percentage: {0}", SP);
 
             } while (Continue());
 
@@ -53,6 +54,22 @@ namespace Lab8
 
             double battingAverage = x / y;
             return battingAverage;
+        }
+
+        public static double SluggingPercentage(int[] input)
+        {
+            double x = 0;
+            double y = input.Length;
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                x = x + input[i];
+
+
+            }
+            double sluggingPercentage = x / y;
+            return sluggingPercentage;
+
         }
 
         public static bool Continue()
