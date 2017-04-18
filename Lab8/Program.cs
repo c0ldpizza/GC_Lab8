@@ -28,20 +28,21 @@ namespace Lab8
                     BattingResults[i] = GetIntegerInRange(0, 4);
                 }
 
-                double BA = BattingAverage(BattingResults);
-                Console.WriteLine("Batting average: {0}", BA);
-                double SP = SluggingPercentage(BattingResults);
-                Console.WriteLine("Slugging percentage: {0}", SP);
+                decimal BA = Math.Round(BattingAverage(BattingResults), 3);
+                Console.WriteLine("Batting average: {0}", BA.ToString("#0.000"));
 
+                decimal SP = Math.Round(SluggingPercentage(BattingResults), 3);
+                Console.WriteLine("Slugging percentage: {0}", SP.ToString("#0.000"));
+                
             } while (Continue());
 
             Console.WriteLine("Goodbye!");
         }
 
-        public static double BattingAverage(int[] input)
+        public static decimal BattingAverage(int[] input)
         {
-            double x = 0;
-            double y = input.Length;
+            decimal x = 0;
+            decimal y = input.Length;
 
             for (int i = 0; i < input.Length; i++)
             {
@@ -52,14 +53,14 @@ namespace Lab8
                 }
             }
 
-            double battingAverage = x / y;
+            decimal battingAverage = x / y;
             return battingAverage;
         }
 
-        public static double SluggingPercentage(int[] input)
+        public static decimal SluggingPercentage(int[] input)
         {
-            double x = 0;
-            double y = input.Length;
+            decimal x = 0;
+            decimal y = input.Length;
 
             for (int i = 0; i < input.Length; i++)
             {
@@ -67,11 +68,12 @@ namespace Lab8
 
 
             }
-            double sluggingPercentage = x / y;
+            decimal sluggingPercentage = x / y;
             return sluggingPercentage;
 
         }
 
+        //Prompts user to continue
         public static bool Continue()
         {
             Console.WriteLine("Another batter? (y/n)");
