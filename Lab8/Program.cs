@@ -28,7 +28,8 @@ namespace Lab8
                     BattingResults[i] = GetIntegerInRange(0, 4);
                 }
 
-               
+                double BA = BattingAverage(BattingResults);
+                Console.WriteLine("Batting average: {0}", BA);
 
 
             } while (Continue());
@@ -38,8 +39,8 @@ namespace Lab8
 
         public static double BattingAverage(int[] input)
         {
-            int x = 0;
-            int y = input.Length;
+            double x = 0;
+            double y = input.Length;
 
             for (int i = 0; i < input.Length; i++)
             {
