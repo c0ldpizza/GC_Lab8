@@ -14,7 +14,7 @@ namespace Lab8
 
             do
             {
-                //Main code
+                //Get inputs from user
                 Console.WriteLine("How many at bats do you want to record for the batter?");
                 int atBats = GetIntegerInRange(0, 1000);
 
@@ -28,8 +28,9 @@ namespace Lab8
                     BattingResults[i] = GetIntegerInRange(0, 4);
                 }
 
+                //output results to user
                 decimal BA = Math.Round(BattingAverage(BattingResults), 3);
-                Console.WriteLine("Batting average: {0}", BA.ToString("#0.000"));
+                Console.WriteLine("Batting average: {0}", BA.ToString("#0.000")); 
 
                 decimal SP = Math.Round(SluggingPercentage(BattingResults), 3);
                 Console.WriteLine("Slugging percentage: {0}", SP.ToString("#0.000"));
@@ -39,6 +40,7 @@ namespace Lab8
             Console.WriteLine("Goodbye!");
         }
 
+        //calculate Batting Average
         public static decimal BattingAverage(int[] input)
         {
             decimal x = 0;
@@ -57,6 +59,7 @@ namespace Lab8
             return battingAverage;
         }
 
+        //Calculate Slugging Percentage
         public static decimal SluggingPercentage(int[] input)
         {
             decimal x = 0;
