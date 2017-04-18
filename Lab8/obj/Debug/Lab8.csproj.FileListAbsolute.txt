@@ -1,0 +1,2 @@
+C:\Users\Charlie\Documents\Visual Studio 2015\Projects\Lab8\Lab8\bin\Debug\Lab8.exe.config
+C:\Users\Charlie\Documents\Visual Studio 2015\Projects\Lab8\Lab8\obj\Debug\Lab8.csprojResolveAssemblyReference.cache
