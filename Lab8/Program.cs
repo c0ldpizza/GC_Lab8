@@ -15,6 +15,18 @@ namespace Lab8
             do
             {
                 //Main code
+                Console.WriteLine("How many at bats do you want to record for the batter?");
+                int atBats = GetIntegerInRange(0, 1000);
+
+                int[] BattingResults = new int[atBats];
+
+                Console.WriteLine("0=out, 1=single, 2=double, 3=triple, 4=home run");
+
+                for (int i = 0; i < atBats; i++)
+                {
+                    Console.Write("Enter the result for the {0}-th at bat:", i+1);
+                    BattingResults[i] = GetIntegerInRange(0, 4);
+                }
 
             } while (Continue());
 
@@ -36,11 +48,37 @@ namespace Lab8
                 return true;
             }
             else
-                Console.WriteLine("Invalid input");
-            Continue();
-            return true;
             {
+                Console.WriteLine("Invalid input");
+                Continue();
+                return true;
             }
 
         }
+
+        public static int GetValidInteger()
+        {
+            int input;
+            while (!int.TryParse(Console.ReadLine(), out input))
+            {
+                Console.WriteLine("Please enter a valid integer.");
+            }
+
+            return input;
+        }
+
+        //Validates that integer is within a given range
+        public static int GetIntegerInRange(int min, int max)
+        {
+            int input;
+
+            do
+            {
+                Console.WriteLine("Please enter an integer between {0} and {1}.", min, max);
+                input = GetValidInteger();
+            } while (input < min || input > max);
+
+            return input;
+        }
     }
+}
