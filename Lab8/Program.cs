@@ -15,25 +15,43 @@ namespace Lab8
             do
             {
                 //Get inputs from user
-                Console.WriteLine("How many at bats do you want to record for the batter?");
-                int atBats = GetIntegerInRange(0, 1000);
+                //Console.WriteLine("How many at bats do you want to record for the batter?");
+                //int atBats = GetIntegerInRange(0, 100);
 
-                int[] BattingResults = new int[atBats];
+                Console.WriteLine("How many batters do you wish to enter data for?");
+                int batters = GetIntegerInRange(0, 10);
+
+                int[][] BatterData = new int[batters][];
+
+                for (int r = 0; r < batters; r++)
+                {
+                    Console.WriteLine("How many at bats does batter No. {0} have?", r+1);
+                    BatterData[r] = new int[int.Parse(Console.ReadLine())];
+
+                    Console.WriteLine("Enter batting data for batter {0}:", r + 1);
+
+                    for (int c = 0; c < BatterData[r].Length; c++)
+                    {
+                        BatterData[r][c] = int.Parse(Console.ReadLine());
+                    }
+
+                }
+                //int[] BattingResults = new int[atBats];
 
                 Console.WriteLine("0=out, 1=single, 2=double, 3=triple, 4=home run");
 
-                for (int i = 0; i < atBats; i++)
-                {
-                    Console.Write("Enter the result for the {0}-th at bat:", i + 1);
-                    BattingResults[i] = GetIntegerInRange(0, 4);
-                }
+                //for (int i = 0; i < atBats; i++)
+                //{
+                //    Console.Write("Enter the result for the {0}-th at bat:", i + 1);
+                //    BattingResults[i] = GetIntegerInRange(0, 4);
+                //}
 
                 //output results to user
-                decimal BA = Math.Round(BattingAverage(BattingResults), 3);
-                Console.WriteLine("Batting average: {0}", BA.ToString("#0.000")); 
+                //decimal BA = Math.Round(BattingAverage(BattingResults), 3);
+                //Console.WriteLine("Batting average: {0}", BA.ToString("#0.000")); 
 
-                decimal SP = Math.Round(SluggingPercentage(BattingResults), 3);
-                Console.WriteLine("Slugging percentage: {0}", SP.ToString("#0.000"));
+                //decimal SP = Math.Round(SluggingPercentage(BattingResults), 3);
+                //Console.WriteLine("Slugging percentage: {0}", SP.ToString("#0.000"));
                 
             } while (Continue());
 
