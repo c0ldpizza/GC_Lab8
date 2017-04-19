@@ -15,14 +15,12 @@ namespace Lab8
             do
             {
                 //Get inputs from user
-                //Console.WriteLine("How many at bats do you want to record for the batter?");
-                //int atBats = GetIntegerInRange(0, 100);
-
                 Console.WriteLine("How many batters do you wish to enter data for?");
                 int batters = GetIntegerInRange(0, 10);
 
                 int[][] BatterData = new int[batters][];
 
+                //populates jagged array with data
                 for (int r = 0; r < batters; r++)
                 {
                     Console.WriteLine("How many at bats does batter No. {0} have?", r + 1);
@@ -37,6 +35,7 @@ namespace Lab8
 
                 }
                 
+                //loops through rows and calculates BA and SP
                 for (int r = 0; r < batters; r++)
                 {
                     decimal x, y, BA, SP = 0;
