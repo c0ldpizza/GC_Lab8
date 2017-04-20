@@ -39,11 +39,11 @@ namespace Lab8
                 for (int r = 0; r < batters; r++)
                 {
                     decimal x, y, BA, SP = 0;
-                    x = BattingAverage(BatterData[r]);
-                    y = SluggingPercentage(BatterData[r]);
+                    BA = BattingAverage(BatterData[r]);
+                    SP = SluggingPercentage(BatterData[r]);
 
-                    BA = Math.Round(x, 3);
-                    SP = Math.Round(y, 3);
+                    //BA = Math.Round(x, 3);
+                    //SP = Math.Round(y, 3);
 
                     //output results to user
                     Console.WriteLine("Batter {0} Batting average: {1}\t Slugging percentage: {2}", r+1 , BA.ToString("#0.000"), SP.ToString("#0.000"));
